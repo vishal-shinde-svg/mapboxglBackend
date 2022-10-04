@@ -6,21 +6,25 @@ export class Mapg {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: true })
-  Name: string;
+  @Column()
+  // @IsNotEmpty()
+  name: string;
 
-  // @Column({ nullable: true })
-  // dis: string;
+  // @IsNotEmpty()
+  @Column()
+  desc: string;
 
-  @Column({ nullable: true })
-  Property: string;
+  @Column()
+  properties: string;
 
   @Index({ spatial: true })
   @Column({
     type: 'geometry',
     spatialFeatureType: 'Geometry',
     srid: 4326,
+    // srid: 3857,
     nullable: true,
   })
-  Geom: GeoJSON;
+  // @IsNotEmpty()
+  geom: GeoJSON;
 }

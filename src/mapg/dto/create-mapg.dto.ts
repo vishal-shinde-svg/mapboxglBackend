@@ -1,5 +1,6 @@
 export class CreateMapgDto {
   id: number;
-  Name: string;
-discription: string;
+  name: string;
+  desc: string;
+  properties: string;
 }

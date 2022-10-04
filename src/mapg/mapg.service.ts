@@ -18,15 +18,27 @@ export class MapgService {
     return this.MapgRepository.find();
   }
 
-  // findOne(id: number) {
-  //   return `This action returns a #${id} mapg`;
-  // }
+  findOne(id: number) {
+    return this.MapgRepository.findOneBy({ id });
+  }
 
-  // update(id: number, updateMapgDto: UpdateMapgDto) {
-  //   return `This action updates a #${id} mapg`;
-  // }
+  updateAll(id: number, createMapgDto: CreateMapgDto) {
+    return this.update(id, createMapgDto);
+  }
 
-  // remove(id: number) {
-  //   return `This action removes a #${id} mapg`;
-  // }
+  update(id: number, updatMapgDto: UpdateMapgDto) {
+    // let stud: student_m = new student_m();
+    // stud.FirstName = updateStudentDto.FirstName;
+    // stud.LastName = updateStudentDto.LastName;
+    // stud.Gender = updateStudentDto.Gender;
+    // stud.Student_Email = updateStudentDto.Student_Email;
+    // stud.Student_Add = updateStudentDto.Student_Add;
+    // stud.id = id;
+    // return this.studentRepository.save(stud);
+    return this.MapgRepository.update(id, updatMapgDto);
+  }
+
+  remove(id: string) {
+    return this.MapgRepository.delete(id);
+  }
 }
